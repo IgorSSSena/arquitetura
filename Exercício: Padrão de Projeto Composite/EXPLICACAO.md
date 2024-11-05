@@ -44,6 +44,15 @@ Para calcular o salário total da organização, foi chamado o método `getSalar
 ## Saída Esperada
 
 Ao executar o código, a saída esperada é:
+## Salário total da organização: R$26000
 
-```plaintext
-Salário total da organização: R$26000
+
+
+
+
+
+
+
+
+
+
