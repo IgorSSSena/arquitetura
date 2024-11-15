@@ -1,0 +1,15 @@
+No código refatorado, apliquei o princípio "Replace Temp with Query" para melhorar a legibilidade, organização e eficiência do cálculo do preço total dos produtos. Aqui estão os detalhes das mudanças realizadas:
+	1	Substituição de Variáveis Temporárias por Métodos:
+	◦	A variável temporária total foi substituída por um método chamado getTotal, que calcula diretamente a soma dos preços e quantidades dos produtos usando o método reduce.
+	◦	A lógica do desconto foi movida para um método chamado applyDiscount, que recebe o total como parâmetro e aplica um desconto de 10% se o total ultrapassar 100.
+	◦	A lógica do custo de envio foi encapsulada no método applyShippingCost, que adiciona um valor fixo de 5 ao total caso seja inferior a 50.
+	2	Melhoria na Estrutura do Código:
+	◦	Cada cálculo foi isolado em funções com nomes descritivos, como getTotal, applyDiscount e applyShippingCost, para que cada etapa do processo fosse clara e independente.
+	◦	A lógica principal (calculateTotalPrice) agora apenas encadeia as chamadas desses métodos, deixando o código mais conciso e organizado.
+	3	Redução de Complexidade:
+	◦	O método principal, calculateTotalPrice, tornou-se curto e declarativo, com cada passo do cálculo claramente separado.
+	◦	Isso facilita a leitura e evita confusões causadas por variáveis acumulativas ou de múltiplos usos.
+Benefícios Detalhados:
+	•	Clareza: Cada etapa do cálculo é descrita por métodos com nomes intuitivos, facilitando a compreensão do que o código faz.
+	•	Reutilização: As funções getTotal, applyDiscount e applyShippingCost podem ser reutilizadas em outros contextos, evitando duplicação de código.
+	•	Manutenibilidade: Qualquer mudança nas regras de cálculo (como o percentual de desconto ou o custo de envio) pode ser feita diretamente no método relevante, sem impactar o restante do código.
