@@ -1,4 +1,8 @@
 
+# Alunos
+- Davi Silva Santana - RA:2411350
+- Igor Silva Sena    - RA:2418274
+
 # Sistema de Gerenciamento de Contatos
 
 Este é um sistema de gerenciamento de contatos desenvolvido em JavaScript, utilizando padrões de projeto estruturais e comportamentais para garantir modularidade, extensibilidade e boas práticas de programação.
