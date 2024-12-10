@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Cheerleader</title>
+</head>
+<body>
+    <h1>Editar Cheerleader</h1>
+    <form action="/edit/<%= cheerleader.id %>" method="POST">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" value="<%= cheerleader.nome %>" required><br>
+
+        <label for="time">Time:</label>
+        <input type="text" id="time" name="time" value="<%= cheerleader.time %>" required><br>
+
+        <label for="posicao">Posição:</label>
+        <input type="text" id="posicao" name="posicao" value="<%= cheerleader.posicao %>" required><br>
+
+        <button type="submit">Salvar Alterações</button>
+    </form>
+    <a href="/">Voltar</a>
+</body>
+</html>

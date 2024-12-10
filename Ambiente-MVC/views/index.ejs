@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cheerleaders</title>
+</head>
+<body>
+    <h1>Cheerleaders</h1>
+    <a href="/create">Adicionar Cheerleader</a>
+    <ul>
+        <% cheerleaders.forEach(cheerleader => { %>
+            <li>
+                <b>Nome:</b> <%= cheerleader.nome %>, 
+                <b>Time:</b> <%= cheerleader.time %>, 
+                <b>Posição:</b> <%= cheerleader.posicao %>
+                (<a href="/edit/<%= cheerleader.id %>">Editar</a>)
+            </li>
+        <% }); %>
+    </ul>
+</body>
+</html>
