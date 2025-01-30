@@ -5,6 +5,17 @@ Este sistema modular segue uma arquitetura baseada em microserviços para gerenc
 
 ---
 
+### 📖 Alunos 
+
+1. **Davi Silva Santana** RA:2411350
+
+2. **Igor Silva Sena**  RA:2418274
+   
+3. **Victor Hugo Oliveira Tlaes**  RA:2411458
+
+
+---
+
 ## **📊 Estrutura dos Microserviços**
 
 Cada microserviço é responsável por uma parte específica da aplicação, facilitando a manutenção e escalabilidade.
@@ -27,12 +38,22 @@ Cada microserviço é responsável por uma parte específica da aplicação, fac
 🔗 **Fluxo de Comunicação:**
 - `main.js → authView → authController` → Valida o usuário antes de acessar o catálogo.
 
+📌 **Usuários disponíveis para teste:**
+| Usuário  | Senha    |
+|----------|---------|
+| `igor`   | `sena`  |
+| `davi`   | `santana` |
+| `victor` | `tlaes` |
+| `professor` | `arquitetura` |
+
 📌 **Exemplo de uso:**
 ```js
 const username = authView.loginUser(); // Chama loginUser, que usa authController
+---
 ```
 
 ---
+
 
 ## **2️⃣ Catálogo de Produtos (`catalogController.js`)**
 
@@ -83,6 +104,9 @@ const paymentStatus = paymentController.processPayment(order);
 ```
 
 ---
+
+
+
 
 ## **📌 Fluxo Completo da Aplicação**
 
