@@ -6,12 +6,14 @@ class AuthController {
       new User("igor", "sena"),
       new User("davi", "santana"),
       new User("victor", "tlaes"),
+      new User("professor", "arquitetura"),
+
     ];
   }
 
   login(username, password) {
     return this.users.some(
-      (u) => u.username === username && u.password === password
+      (user) => user.username === username && user.password === password
     );
   }
 }

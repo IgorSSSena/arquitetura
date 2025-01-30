@@ -1,5 +1,5 @@
 const Order = require('../models/order');
-const CatalogController = require('./CatalogController');
+const CatalogController = require('./catalogController');
 
 class OrderController {
     constructor() {
@@ -9,15 +9,22 @@ class OrderController {
     createOrder(username, cart) {
         let total = 0;
         for (let item of cart) {
-            if (!CatalogController.checkStock(item.productId, item.quantity)) {
+            const product = CatalogController.getProducts().find(p => p.id === item.productId);
+            if (!product || product.stock < item.quantity) {
                 return null;
             }
-            total += CatalogController.getProducts().find(p => p.id === item.productId).price * item.quantity;
+            total += product.price * item.quantity;
         }
 
+        // Criar o pedido se o estoque estiver disponível
         const order = new Order(this.orders.length + 1, username, cart, total);
         this.orders.push(order);
-        cart.forEach(item => CatalogController.updateStock(item.productId, item.quantity));
+
+        // Atualizar estoque
+        cart.forEach(item => {
+            const product = CatalogController.getProducts().find(p => p.id === item.productId);
+            product.stock -= item.quantity;
+        });
 
         return order;
     }
